@@ -7,7 +7,7 @@ const Header = ({ messages, handleDeleteChat }) => {
     <div className="flex items-center justify-between p-4 mx-3 sm:mx-5">
       {/* App Title */}
       <p className="text-2xl sm:text-3xl font-extrabold text-gray-800">
-        AI Chat App
+        INTELLICON
       </p>
 
       <div className="flex items-center gap-4 sm:gap-8">
