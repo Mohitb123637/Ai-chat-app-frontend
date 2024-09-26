@@ -61,8 +61,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex h-screen w-full justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100">
-      <div className="flex p-8 max-w-4xl w-full mx-auto flex-col md:flex-row ">
+    <div className="flex w-full justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100  overflow-auto ">
+      <div className="flex p-8 max-w-4xl w-full mx-auto flex-col md:flex-row">
         {/* Left Section */}
         <div className="md:w-1/2 p-6 flex flex-col justify-center">
           <h1 className="font-bold text-2xl sm:text-5xl text-gray-800 hover:text-gray-600 transition-colors">
