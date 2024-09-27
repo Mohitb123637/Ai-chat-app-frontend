@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../store/auth/authAction';
+import { motion } from 'framer-motion';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -156,15 +157,23 @@ const SignUp = () => {
 
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-            <button
+            <motion.button
               type="submit"
-              className={`btn btn-primary w-full p-3 rounded-lg font-semibold text-white bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 transition-all ${
-                loading ? 'loading' : ''
-              }`}
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              className={`btn btn-primary w-full  bg-gradient-to-r from-indigo-500 to-pink-500 text-white `}
               disabled={loading}
             >
-              {loading ? 'Signing Up...' : 'Sign Up'}
-            </button>
+              {loading ? (
+                <span className="flex items-center gap-2">
+                  <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></span>
+                  Signing Up...
+                </span>
+              ) : (
+                'Sign Up'
+              )}
+            </motion.button>
 
             <div className="flex gap-2 text-sm mt-5 justify-center">
               <span className="text-gray-700">Already have an account?</span>

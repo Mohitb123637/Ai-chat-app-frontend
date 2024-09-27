@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../store/auth/authAction';
+import { motion } from 'framer-motion';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -112,15 +113,23 @@ const Login = () => {
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-            <button
+            <motion.button
               type="submit"
-              className={`btn btn-primary w-full ${
-                loading ? 'loading' : ''
-              } bg-gradient-to-r from-indigo-500 to-pink-500 text-white`}
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              className={`btn btn-primary w-full  bg-gradient-to-r from-indigo-500 to-pink-500 text-white `}
               disabled={loading}
             >
-              {loading ? 'Signing In...' : 'Sign In'}
-            </button>
+              {loading ? (
+                <span className="flex items-center gap-2">
+                  <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></span>
+                  Signing In...
+                </span>
+              ) : (
+                'Sign In'
+              )}
+            </motion.button>
 
             <div className="flex gap-2 text-sm mt-5">
               <span className="text-gray-700">Don't have an account?</span>
