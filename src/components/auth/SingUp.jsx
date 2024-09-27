@@ -62,7 +62,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex w-full justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100  overflow-auto ">
+    <div className="flex w-full max-h-full justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100  overflow-auto ">
       <div className="flex p-8 max-w-4xl w-full mx-auto flex-col md:flex-row">
         {/* Left Section */}
         <div className="md:w-1/2 p-6 flex flex-col justify-center">

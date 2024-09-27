@@ -52,7 +52,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex w-full justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100">
+    <div className="flex max-h-full w-full justify-center items-center bg-gradient-to-r from-blue-50 to-blue-100">
       <div className="flex p-6 max-w-5xl mx-auto flex-col md:flex-row md:items-start  rounded-lg">
         {/* left */}
         <div className="md:w-1/2 p-6">
