@@ -68,8 +68,7 @@ const VerifyEmail = () => {
             APP
           </h1>
           <p className="text-gray-700 text-lg mt-5">
-            Welcome! Please login with your registered Email Address and
-            Password.
+            Welcome! Please verify your registered Email Address
           </p>
         </div>
         {/* right */}
