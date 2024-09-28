@@ -113,6 +113,15 @@ const Login = () => {
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
+            {error === 'Please verify your email before logging in.' ? (
+              <>
+                <p className="text-red-500 text-sm mb-4">
+                  Please verify your email address before logging in.
+                </p>
+                <Link to="/verifyEmail">Verify Email</Link>
+              </>
+            ) : null}
+
             <motion.button
               type="submit"
               whileTap={{ scale: 0.95 }}
