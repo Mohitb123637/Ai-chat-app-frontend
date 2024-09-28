@@ -112,20 +112,20 @@ const Login = () => {
               </span>
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-
-            {error === 'Please verify your email before logging in.' && (
-              <div className="bg-yellow-100 p-4 rounded-md border border-yellow-400">
-                <p className="text-yellow-600 text-sm mb-2">
-                  Please verify your email address before logging in.
-                </p>
-                <Link
-                  to="/verifyEmail"
-                  className="text-blue-600 font-semibold hover:underline transition-colors"
-                >
-                  Verify Email
-                </Link>
-              </div>
-            )}
+            {error &&
+              error === 'Please verify your email before logging in.' && (
+                <div className="bg-yellow-100 p-4 rounded-md border border-yellow-400">
+                  <p className="text-yellow-600 text-sm mb-2">
+                    Please verify your email address before logging in.
+                  </p>
+                  <Link
+                    to="/verifyEmail"
+                    className="text-blue-600 font-semibold hover:underline transition-colors"
+                  >
+                    Verify Email
+                  </Link>
+                </div>
+              )}
 
             <motion.button
               type="submit"
