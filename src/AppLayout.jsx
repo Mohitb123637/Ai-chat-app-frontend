@@ -3,7 +3,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 
 const AppLayout = () => {
   const location = useLocation();
-  const noSidebar = ['/login', '/signup'];
+  const noSidebar = ['/login', '/signup', '/verifyEmail'];
   return <div>{!noSidebar.includes(location.pathname) && <Sidebar />}</div>;
 };
 

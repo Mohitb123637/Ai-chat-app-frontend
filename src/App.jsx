@@ -6,6 +6,7 @@ import SignUp from './components/auth/SingUp';
 import Main from './components/Main/Main';
 import PrivateRoute from './components/Private.route';
 import AppLayout from './AppLayout';
+import VerifyEmail from './components/auth/VerifyEmail';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         {/* Public Routes  */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verifyEmail" element={<VerifyEmail />} />
         <Route path="/" element={<PrivateRoute />}>
           <Route path="" element={<Main />} />
         </Route>

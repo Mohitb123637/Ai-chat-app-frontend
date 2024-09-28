@@ -49,7 +49,7 @@ const SignUp = () => {
       if (registerUser.fulfilled.match(resultAction)) {
         const { token } = resultAction.payload;
         localStorage.setItem('token', token);
-        navigate('/login');
+        navigate('/verifyEmail', { state: { email: formData.email } });
       } else {
         setError(resultAction.payload || 'Signup failed');
       }

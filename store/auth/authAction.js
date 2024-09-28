@@ -22,6 +22,23 @@ export const registerUser = createAsyncThunk(
     }
   }
 );
+
+export const verifyEmail = createAsyncThunk(
+  'user/verifyEmail',
+  async ({ email, verificationCode }, { rejectWithValue }) => {
+    try {
+      const response = await axiosConfig.post('/user/verifyEmail', {
+        email,
+        verificationCode,
+      });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 export const loginUser = createAsyncThunk(
   'user/login',
   async ({ email, password }, { rejectWithValue }) => {
